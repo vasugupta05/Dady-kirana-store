@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dady Kirana Store | Best Grocery Store in Sunel since 1995</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Dady Kirana Store - Your trusted grocery partner in Sunel, Rajasthan. Quality pulses, spices, and daily essentials since 1995. Order on WhatsApp!">
+    <meta name="keywords" content="Kirana Store in Sunel, Best Grocery Store Sunel, Grocery Shop Jhalawar, Dady Kirana, Daily Needs Store Rajasthan, Ration Store Sunel">
+    <meta name="author" content="Dady Kirana Store">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-green: #1b4332;
+            --light-green: #2d6a4f;
+            --earthy-brown: #6f4e37;
+            --cream: #fdfaf5;
+            --beige: #f5ebe0;
+            --white: #ffffff;
+            --text-dark: #2d2d2d;
+            --transition: all 0.3s ease-in-out;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            background-color: var(--cream);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- Language Toggle --- */
+        .lang-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 2000;
+        }
+
+        .lang-btn {
+            background: var(--primary-green);
+            color: white;
+            border: 2px solid var(--beige);
+            padding: 8px 16px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: var(--transition);
+        }
+
+        .lang-btn:hover { background: var(--earthy-brown); }
+
+        /* --- Custom Logo Design (CSS) --- */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+            background: var(--primary-green);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: gold;
+            font-size: 24px;
+            border: 2px solid var(--earthy-brown);
+        }
+
+        .logo-text h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            line-height: 1;
+            color: var(--primary-green);
+        }
+
+        /* --- Navigation --- */
+        nav {
+            background: rgba(253, 250, 245, 0.95);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .nav-links { display: flex; list-style: none; gap: 25px; }
+        .nav-links a { 
+            text-decoration: none; 
+            color: var(--text-dark); 
+            font-weight: 500; 
+            transition: var(--transition);
+        }
+        .nav-links a:hover { color: var(--light-green); }
+
+        /* --- Hero Section --- */
+        .hero {
+            height: 85vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        .hero-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(40px, 8vw, 70px);
+            margin-bottom: 10px;
+        }
+
+        .hero-content p {
+            font-size: clamp(18px, 3vw, 24px);
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-whatsapp { background: #25d366; color: white; border: none; }
+        .btn-whatsapp:hover { background: #128c7e; transform: translateY(-3px); }
+        .btn-map { background: white; color: var(--primary-green); }
+        .btn-map:hover { background: var(--beige); transform: translateY(-3px); }
+
+        /* --- Sections --- */
+        section { padding: 80px 10%; }
+        .section-title {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            color: var(--primary-green);
+            margin-bottom: 50px;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            width: 80px;
+            height: 3px;
+            background: var(--earthy-brown);
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* --- About Section --- */
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        .about-img img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 20px 20px 0 var(--beige);
+        }
+        .about-text h3 { font-size: 28px; margin-bottom: 15px; color: var(--earthy-brown); }
+
+        /* --- Categories --- */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 20px;
+        }
+        .cat-card {
+            background: var(--white);
+            padding: 25px 15px;
+            text-align: center;
+            border-radius: 15px;
+            transition: var(--transition);
+            cursor: pointer;
+            border: 1px solid var(--beige);
+        }
+        .cat-card:hover {
+            border-color: var(--light-green);
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+        .cat-card i {
+            font-size: 40px;
+            color: var(--light-green);
+            margin-bottom: 15px;
+        }
+        .cat-card h4 { font-size: 16px; font-weight: 600; }
+
+        /* --- Why Choose Us --- */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        .feature-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 5px solid var(--earthy-brown);
+        }
+        .feature-card i { color: var(--earthy-brown); font-size: 24px; margin-bottom: 10px; }
+
+        /* --- Reviews --- */
+        .review-container {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            padding: 20px 0;
+            scrollbar-width: none;
+        }
+        .review-card {
+            min-width: 300px;
+            background: var(--beige);
+            padding: 30px;
+            border-radius: 15px;
+        }
+        .stars { color: gold; margin-bottom: 10px; }
+
+        /* --- FAQ --- */
+        .faq-item {
+            background: var(--white);
+            margin-bottom: 10px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .faq-question {
+            padding: 20px;
+            background: var(--beige);
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+        }
+        .faq-answer { padding: 20px; display: none; }
+
+        /* --- Contact --- */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        .map-box {
+            border-radius: 20px;
+            overflow: hidden;
+            height: 300px;
+            background: #ddd;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background: var(--primary-green);
+            color: white;
+            padding: 60px 10% 20px;
+            text-align: center;
+        }
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            text-align: left;
+            margin-bottom: 40px;
+        }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        /* --- Floating WhatsApp --- */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25d366;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+        .whatsapp-float:hover { transform: scale(1.1); }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .about-container, .contact-grid { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+            section { padding: 60px 5%; }
+            .hero-content h2 { font-size: 40px; }
+        }
+
+        /* Language-specific hidden states */
+        [data-lang="hi"] { display: none; }
+    </style>
+</head>
+<body>
+
+    <!-- Language Switcher -->
+    <div class="lang-switcher">
+        <button class="lang-btn" onclick="toggleLanguage()">हिन्दी / English</button>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo-container">
+            <div class="logo-icon"><i class="fas fa-shopping-basket"></i></div>
+            <div class="logo-text">
+                <h1>Dady Kirana</h1>
+                <small style="color: var(--earthy-brown); font-weight: 700;">SUNEL</small>
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home" class="en">Home</a><a href="#home" class="hi">मुख्य</a></li>
+            <li><a href="#about" class="en">About Us</a><a href="#about" class="hi">हमारे बारे में</a></li>
+            <li><a href="#categories" class="en">Products</a><a href="#categories" class="hi">सामान</a></li>
+            <li><a href="#contact" class="en">Contact</a><a href="#contact" class="hi">संपर्क</a></li>
+        </ul>
+        <a href="https://wa.me/917023070567" class="btn btn-whatsapp" style="padding: 10px 20px;">
+            <i class="fab fa-whatsapp"></i> <span class="en">Order</span><span class="hi">ऑर्डर</span>
+        </a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content" data-aos="fade-up">
+            <p style="text-transform: uppercase; letter-spacing: 3px; margin-bottom: 10px;" class="en">Since 1995</p>
+            <p style="text-transform: uppercase; letter-spacing: 3px; margin-bottom: 10px;" class="hi">1995 से आपकी सेवा में</p>
+            
+            <h2 class="en">Dady Kirana Store</h2>
+            <h2 class="hi">डेडी किराना स्टोर</h2>
+            
+            <p class="en">"Har Ghar Ki Zarurat, Har Din Ki Bachat."</p>
+            <p class="hi">"हर घर की जरूरत, हर दिन की बचत।"</p>
+            
+            <div class="hero-btns">
+                <a href="javascript:void(0)" onclick="sendOrderMsg()" class="btn btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i> 
+                    <span class="en">Order on WhatsApp</span><span class="hi">वॉट्सऐप पर ऑर्डर करें</span>
+                </a>
+                <a href="https://maps.google.com/?q=Bus+Stand+Sunel+Jhalawar" target="_blank" class="btn btn-map">
+                    <i class="fas fa-location-dot"></i> 
+                    <span class="en">Get Directions</span><span class="hi">रास्ता देखें</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="about-container">
+            <div class="about-img" data-aos="fade-right">
+                <img src="https://images.unsplash.com/photo-1534723452862-4c874018d66d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="About Dady Kirana">
+            </div>
+            <div class="about-text" data-aos="fade-left">
+                <h2 class="en">Our Story</h2>
+                <h2 class="hi">हमारी कहानी</h2>
+                
+                <p class="en">Serving the beautiful town of Sunel since 1995, Dady Kirana Store has grown from a small shop to a household name. We believe in providing only the purest products at the most honest prices.</p>
+                <p class="hi">1995 से सुनेल की सेवा में समर्पित, डेडी किराना स्टोर एक छोटी दुकान से शुरू होकर आज हर घर का भरोसा बन चुका है। हम सबसे ईमानदार कीमतों पर केवल शुद्ध उत्पाद प्रदान करने में विश्वास करते हैं।</p>
+                
+                <ul style="list-style: none; margin-top: 20px;">
+                    <li><i class="fas fa-check-circle" style="color: var(--light-green);"></i> Quality Products</li>
+                    <li><i class="fas fa-check-circle" style="color: var(--light-green);"></i> Honest Pricing</li>
+                    <li><i class="fas fa-check-circle" style="color: var(--light-green);"></i> Friendly Service</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Categories -->
+    <section id="categories" style="background: var(--beige);">
+        <h2 class="section-title en">What We Offer</h2>
+        <h2 class="section-title hi">हमारे उत्पाद</h2>
+        
+        <div class="category-grid" data-aos="fade-up">
+            <!-- Dynamic Categories -->
+            <div class="cat-card" onclick="sendOrderMsg('Atta/Rice')">
+                <i class="fas fa-wheat-awn"></i>
+                <h4 class="en">Atta & Rice</h4><h4 class="hi">आटा और चावल</h4>
+            </div>
+            <div class="cat-card" onclick="sendOrderMsg('Pulses')">
+                <i class="fas fa-seedling"></i>
+                <h4 class="en">Pulses (Dal)</h4><h4 class="hi">दालें</h4>
+            </div>
+            <div class="cat-card" onclick="sendOrderMsg('Spices')">
+                <i class="fas fa-mortar-pestle"></i>
+                <h4 class="en">Spices (Masala)</h4><h4 class="hi">मसाले</h4>
+            </div>
+            <div class="cat-card" onclick="sendOrderMsg('Oil')">
+                <i class="fas fa-droplet"></i>
+                <h4 class="en">Edible Oil</h4><h4 class="hi">खाद्य तेल</h4>
+            </div>
+            <div class="cat-card" onclick="sendOrderMsg('Tea/Sugar')">
+                <i class="fas fa-mug-hot"></i>
+                <h4 class="en">Tea & Sugar</h4><h4 class="hi">चाय और चीनी</h4>
+            </div>
+            <div class="cat-card" onclick="sendOrderMsg('Dry Fruits')">
+                <i class="fas fa-leaf"></i>
+                <h4 class="en">Dry Fruits</h4><h4 class="hi">सूखे मेवे</h4>
+            </div>
+            <div class="cat-card" onclick="sendOrderMsg('Cleaning')">
+                <i class="fas fa-pump-soap"></i>
+                <h4 class="en">Cleaning</h4><h4 class="hi">सफाई का सामान</h4>
+            </div>
+            <div class="cat-card" onclick="sendOrderMsg('Snacks')">
+                <i class="fas fa-cookie"></i>
+                <h4 class="en">Biscuits & Snacks</h4><h4 class="hi">बिस्कुट और नमकीन</h4>
+            </div>
+        </div>
+        <p style="text-align: center; margin-top: 30px; font-weight: 600;" class="en">+ Many more items available in-store!</p>
+        <p style="text-align: center; margin-top: 30px; font-weight: 600;" class="hi">+ और भी बहुत कुछ दुकान पर उपलब्ध है!</p>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section>
+        <h2 class="section-title en">Why Shop With Us?</h2>
+        <h2 class="section-title hi">हमसे ही क्यों खरीदें?</h2>
+        
+        <div class="features-grid">
+            <div class="feature-card" data-aos="zoom-in">
+                <i class="fas fa-award"></i>
+                <h4 class="en">28+ Years Trust</h4><h4 class="hi">28+ वर्षों का भरोसा</h4>
+                <p class="en">Serving families in Sunel since 1995 with integrity.</p>
+                <p class="hi">1995 से सुनेल के परिवारों की पूरी ईमानदारी के साथ सेवा।</p>
+            </div>
+            <div class="feature-card" data-aos="zoom-in" data-aos-delay="100">
+                <i class="fas fa-tags"></i>
+                <h4 class="en">Best Prices</h4><h4 class="hi">बेहतरीन दाम</h4>
+                <p class="en">Wholesale rates for retail customers every day.</p>
+                <p class="hi">रिटेल ग्राहकों के लिए हर दिन होलसेल रेट।</p>
+            </div>
+            <div class="feature-card" data-aos="zoom-in" data-aos-delay="200">
+                <i class="fas fa-truck-fast"></i>
+                <h4 class="en">WhatsApp Orders</h4><h4 class="hi">वॉट्सऐप ऑर्डर</h4>
+                <p class="en">Just send your list, we keep it ready for you.</p>
+                <p class="hi">बस अपनी लिस्ट भेजें, हम उसे आपके लिए तैयार रखेंगे।</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews -->
+    <section style="background: var(--primary-green); color: white;">
+        <h2 class="section-title en" style="color: white;">Customer Reviews</h2>
+        <h2 class="section-title hi" style="color: white;">ग्राहकों की राय</h2>
+        
+        <div class="review-container">
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p style="color: #333">"Dady Kirana Store has the best quality pulses in Sunel. Prices are very fair."</p>
+                <strong style="color: var(--primary-green)">- Rajesh Meena</strong>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p style="color: #333">"I order on WhatsApp every month. Extremely convenient and friendly service."</p>
+                <strong style="color: var(--primary-green)">- Sunita Gupta</strong>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p style="color: #333">"Trustworthy shop. They never compromise on quality. Highly recommended!"</p>
+                <strong style="color: var(--primary-green)">- Amit Sharma</strong>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section>
+        <h2 class="section-title en">Common Questions</h2>
+        <h2 class="section-title hi">अक्सर पूछे जाने वाले सवाल</h2>
+        
+        <div class="faq-item">
+            <div class="faq-question">
+                <span class="en">Do you have all grocery items?</span>
+                <span class="hi">क्या आपके पास सारा किराना सामान उपलब्ध है?</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p class="en">Yes, from grains to cleaning products, we are a one-stop shop.</p>
+                <p class="hi">जी हाँ, अनाज से लेकर सफाई के सामान तक, हमारे पास सब कुछ उपलब्ध है।</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                <span class="en">What are your working hours?</span>
+                <span class="hi">दुकान खुलने का समय क्या है?</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p class="en">We are open 7 days a week from 8:00 AM to 9:00 PM.</p>
+                <p class="hi">हम सप्ताह के सातों दिन सुबह 8:00 बजे से रात 9:00 बजे तक खुले रहते हैं।</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <div class="contact-grid">
+            <div data-aos="fade-right">
+                <h2 class="en">Visit Us</h2><h2 class="hi">पधारें</h2>
+                <p><i class="fas fa-location-dot"></i> Bus Stand, Sunel, Dist: Jhalawar, Rajasthan</p>
+                <p><i class="fas fa-phone"></i> +91 7023070567 (WhatsApp Only)</p>
+                <p><i class="fas fa-calendar-check"></i> Open 7 Days a Week</p>
+            </div>
+            <div class="map-box" data-aos="fade-left">
+                <!-- Replace with actual Google Maps Iframe if needed -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3625.642137976694!2d75.9922253!3d24.5262704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDMxJzM0LjYiTiA3NcKwNTknMzIuMCJF!5e0!3m2!1sen!2sin!4v1680000000000!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h3>Dady Kirana Store</h3>
+                <p class="en">Serving Sunel since 1995. Quality you can trust.</p>
+                <p class="hi">1995 से सुनेल की सेवा में। भरोसेमंद गुणवत्ता।</p>
+            </div>
+            <div>
+                <h4 class="en">Quick Links</h4><h4 class="hi">लिंक्स</h4>
+                <a href="#about" style="color: white; display: block;">About Us</a>
+                <a href="#categories" style="color: white; display: block;">Our Products</a>
+            </div>
+            <div>
+                <h4 class="en">Connect</h4><h4 class="hi">जुड़ें</h4>
+                <div style="display: flex; gap: 15px; margin-top: 10px; font-size: 20px;">
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-instagram"></i>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2023 Dady Kirana Store. Developed for Sunel's Pride.
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/917023070567" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+
+        // Language Toggle Logic
+        let currentLang = 'en';
+        function toggleLanguage() {
+            const enElements = document.querySelectorAll('.en');
+            const hiElements = document.querySelectorAll('.hi');
+            
+            if(currentLang === 'en') {
+                enElements.forEach(el => el.style.display = 'none');
+                hiElements.forEach(el => el.style.display = 'block');
+                currentLang = 'hi';
+            } else {
+                enElements.forEach(el => el.style.display = 'block');
+                hiElements.forEach(el => el.style.display = 'none');
+                currentLang = 'en';
+            }
+        }
+
+        // WhatsApp Message Logic
+        function sendOrderMsg(category = '') {
+            let msg = "Hello Dady Kirana Store, I would like to order groceries.";
+            if(category) msg = `Hello Dady Kirana Store, I'm interested in buying ${category}. Please share the price list.`;
+            
+            const encodedMsg = encodeURIComponent(msg);
+            window.open(`https://wa.me/917023070567?text=${encodedMsg}`, '_blank');
+        }
+
+        // Simple FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const answer = item.nextElementSibling;
+                const icon = item.querySelector('i');
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+                icon.classList.toggle('fa-chevron-up');
+                icon.classList.toggle('fa-chevron-down');
+            });
+        });
+    </script>
+</body>
+</html>
